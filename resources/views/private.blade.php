@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <a href="{{ route('user.register') }}">Регистрация</a>
+    <h1>Вы успешно авторизировались</h1>
+    <a href="{{ route('user.logout') }}">Выйти</a>
 </body>
 </html>

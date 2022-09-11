@@ -26,9 +26,12 @@ Route::name('user.')->group(function(){
         return view('login');
     })->name('login');
 
-    // Route::post('/login', []);
+    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 
-    // Route::get('logout', [])->name('logout');
+    Route::get('logout', function(){
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');
 
     Route::get('/register', function(){
         if(Auth::check()) {
@@ -38,5 +41,5 @@ Route::name('user.')->group(function(){
         return view('register');
     })->name('register');
 
-    // Route::post('/register', []);
+    Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'save']);
 });
